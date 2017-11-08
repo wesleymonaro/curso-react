@@ -1,19 +1,19 @@
-//Integrando o React com Redux Exemplo 2
+//Integrando  o React com Redux
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
+import fieldReducer from './fieldReducer'
 
-import counterReducer from './counterReducer'
-import Counter from './counter'
+import Field from './field'
 
 const reducers = combineReducers({
-    counter: counterReducer
+    field: fieldReducer
 })
 
 ReactDOM.render(
     <Provider store={createStore(reducers)} >
-        <Counter />
+        <Field initialValue='teste' />
     </Provider>
 , document.getElementById('app'))
